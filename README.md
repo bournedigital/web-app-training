@@ -30,6 +30,7 @@ Ensure you are connected to the wifi when downloading repositories and dependenc
 ```
 brew install node
 ``` 
+
 - Check it was installed by checking the versions 
 
 ```
@@ -52,3 +53,22 @@ Follow this process to install the default React boilerplate
  -g creat-react-app
 ``` 
 
+- Enter below code in terminal to initiate React boilerplate
+
+```
+create-react-app (name of your choice - delete brackets)
+``` 
+
+- Enter below code in terminal to change directory to new React boilerplate
+
+```
+cd (new directory path)
+```
+
+- Enter below code in terminal to start app
+
+```
+npm start
+```
+
+- Expect app to open in browser
