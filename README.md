@@ -109,6 +109,12 @@ npm i -D webpack webpack-dev-server
 npm i -D babel-cli babel-loader babel-preset-es2015 babel-preset-stage-2 babel-preset-react
 ```
 
+- Install file loaders
+
+```
+npm i -D file-loader node-sass css-loader sass-loader style-loader url-loader
+```
+
 ### Configure dev scripts
 
 - Open and edit *package.json* file with the below.
@@ -154,7 +160,16 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.js$/,
+				exclude: /(node_modules)/,
 				loader: 'babel-loader'
+			},
+			{
+				test: /\.scss$/,
+				loader: 'style-loader!css-loader!sass-loader'
+			},
+			{ 
+				test: /\.(png|jpg|svg|gif)$/,
+				loader: 'url-loader?limit=8192'
 			}
 		]
 	}
@@ -199,6 +214,8 @@ module.exports = {
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import './scss/global.scss'
+
 import App from './components/App'
 
 ReactDOM.render(
@@ -213,16 +230,40 @@ ReactDOM.render(
 ```
 import React, { Component } from 'react'
 
+import img from '../imgs/test-image.jpg'
+
 export default class App extends Component {
 	render() {
 		return (
 			<div className="App">
 				<h1>{"This is the app"}</h1>
+				<img src={img} alt="plank"/>
 			</div>
 		)
 	}
 } 
 ```
+
+### Add sass styles
+
+- In *src* directory, create an *scss* directory.
+- In *scss* directory, create an *global.scss* file.
+- Open and edit *global.scss* file with the below.
+
+```
+* {
+	padding: 0;
+	margin: 0;
+}
+.App {
+	margin: 10px;
+}
+```
+
+### Add image
+
+- In *src* directory, create an *imgs* directory.
+- In *imgs* directory, add any image and name it *test-image*.
 
 ### Build and run app
 - Enter below code in terminal to output *bundle.js*, expect a build log.
