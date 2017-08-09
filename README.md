@@ -97,3 +97,16 @@ npm i -D webpack webpack-dev-server
 ```
 npm i -D babel-cli babel-loader babel-preset-es2015 babel-preset-stage-2 babel-preset-react
 ```
+- Open and edit *package.json* file.
+- Swap
+```
+"scripts": {
+	"test": "echo \"Error: no test specified\" && exit 1"
+}
+```
+- for
+```
+"scripts": {
+	"build": "webpack",
+	"start": "webpack-dev-server"
+}
