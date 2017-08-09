@@ -49,7 +49,7 @@ Follow this process to install the default React boilerplate.
 - Enter below code in terminal to install *create-react-app* globally.
 
 ```
--g create-react-app
+npm i -g create-react-app
 ``` 
 
 - Enter below code in terminal to initiate React boilerplate.
