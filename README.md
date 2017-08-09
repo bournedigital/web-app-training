@@ -40,7 +40,7 @@ node -v
 npm -v
 ``` 
 
-## Raect boilerpate setup
+## React boilerpate setup
 
 Follow this process to install the default React boilerplate.
 
